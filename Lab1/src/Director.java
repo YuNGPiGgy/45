@@ -43,18 +43,18 @@ public class Director
 	//Getters
 	public String getFirstName()
 	{
-		return this.FirstName;
+		return FirstName;
 	}
 	public String getLastName()
 	{
-		return this.LastName;
+		return LastName;
 	}
 	public int getBirthYear()
 	{
-		return this.BirthYear;
+		return BirthYear;
 	}
 	public int getNumOfFilme()
 	{
-		return this.NumOfFilm;
+		return NumOfFilm;
 	}
 }

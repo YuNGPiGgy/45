@@ -49,23 +49,23 @@ public class Movie
 	//Getters
 	public int getDuration()
 	{
-		return this.Duration;
+		return Duration;
 	}
 	public int getReleasedYear()
 	{
-		return this.ReleasedYear;
+		return ReleasedYear;
 	}
 	public double getPrice()
 	{
-		return this.Price;
+		return Price;
 	}
 	public String getTitle()
 	{
-		return this.Title;
+		return Title;
 	}
 	public Director getDirector()
 	{
-		return this.Director;
+		return Director;
 	}
 	
 	
