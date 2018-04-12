@@ -72,11 +72,11 @@ public class Movie
 	{
 		return("Title: " + this.getTitle() + 
 				"\nPublished in: " + this.getReleasedYear() +
-				"\nDuration: " + this.getDuration() +
+				"\nDuration: " + this.getDuration() + " minutes" +
 				"\nPrice: $" + this.getPrice() +
 				"\nDirected by " + this.getDirector().getFullName() + 
 				", who was born in " + this.getDirector().getBirthYear() +
-				" and has " + this.getDirector().getNumOfFilme() + "release(s.)");
+				" and has " + this.getDirector().getNumOfFilme() + " release(s).");
 	}
 	
 }
