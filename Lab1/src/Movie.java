@@ -67,7 +67,16 @@ public class Movie
 	{
 		return Director;
 	}
-	
-	
+
+	public String toString()
+	{
+		return("Title: " + this.getTitle() + 
+				"\nPublished in: " + this.getReleasedYear() +
+				"\nDuration: " + this.getDuration() +
+				"\nPrice: $" + this.getPrice() +
+				"\nDirected by " + this.getDirector().getFullName() + 
+				", who was born in " + this.getDirector().getBirthYear() +
+				" and has " + this.getDirector().getNumOfFilme() + "release(s.)");
+	}
 	
 }

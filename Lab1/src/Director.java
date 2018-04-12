@@ -49,6 +49,10 @@ public class Director
 	{
 		return LastName;
 	}
+	public String getFullName()
+	{
+		return (FirstName + " " + LastName);
+	}
 	public int getBirthYear()
 	{
 		return BirthYear;
