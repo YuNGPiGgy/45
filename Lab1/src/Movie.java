@@ -1,3 +1,6 @@
+//Yung-Chu Chuang 50926235
+//Tzu-Ling Wang	77721457
+
 public class Movie
 {
 	/*

@@ -1,3 +1,6 @@
+//Yung-Chu Chuang 50926235
+//Tzu-Ling Wang	77721457
+
 public class Lab1
 {
 	public static void main(String[] args)
@@ -10,6 +13,5 @@ public class Lab1
 		Movie HarryPotter6 = new Movie(153, 2009, 10.99, "Harry Potter and the Half-Blood Prince", new Director("David", "Yates", 1963, 27));
 		Movie HarryPotter7_1 = new Movie(146, 2010, 19.99, "Harry Potter and the Deathly Hallows – Part 1", new Director("David", "Yates", 1963, 27));
 		Movie HarryPotter7_2 = new Movie(130, 2011, 19.99, "Harry Potter and the Deathly Hallows – Part 2", new Director("David", "Yates", 1963, 27));
-		
 	}
 }
