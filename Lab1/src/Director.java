@@ -1,24 +1,27 @@
-//Yung-Chu Chuang 50926235
-//Tzu-Ling Wang	77721457
+/******45J lab***********
+Yung-Chu Chuang 50926235
+tzulingw Tzu-Ling Wang	77721457
+----------------------------------
+this file 
+************************/
 
 public class Director
 {
 	/*
 	 String - first name of Director
-	 String – last name of Director
-	 int – birth year of Director
-	 int – number of films the director has directed
+	 String - last name of Director
+	 int - birth year of Director
+	 int - number of films the director has directed
 	 */
 	private String FirstName;
 	private String LastName;
 	private int BirthYear;
 	private int NumOfFilm;
 	
-	public Director()
-	{
+	public Director(){
 	}
-	public Director(String first, String last, int year, int film)
-	{
+	
+	public Director(String first, String last, int year, int film)	{
 		this.FirstName = first;
 		this.LastName = last;
 		this.BirthYear = year;

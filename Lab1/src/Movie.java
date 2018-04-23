@@ -1,5 +1,9 @@
-//Yung-Chu Chuang 50926235
-//Tzu-Ling Wang	77721457
+/******45J lab***********
+Yung-Chu Chuang 50926235
+tzulingw Tzu-Ling Wang	77721457
+----------------------------------
+this file
+************************/
 
 public class Movie
 {
@@ -8,7 +12,7 @@ public class Movie
 	int - year the movie was released
 	double - price of the movie in USD
 	String - title of the movie
-	Director – an object representing the Director of the movie 
+	Director - an object representing the Director of the movie 
 		(for this assignment, you may assume the movie has only one director).
 	*/
 	private int Duration;
@@ -17,62 +21,62 @@ public class Movie
 	private String Title;
 	private Director Director;
 	
-	public Movie()
-	{
+	public Movie(){
+		
 	}
-	public Movie(int time, int year, double price, String title, Director director)
-	{
+	
+	public Movie(int time, int year, double price, String title, Director director){
 		this.Duration = time;
 		this.ReleasedYear = year;
 		this.Price = price;
 		this.Title = title;
 		this.Director = director;
 	}
+	
 	//Setters
-	public void setDuration(int time)
-	{
+	public void setDuration(int time){
 		this.Duration = time;
 	}
-	public void setReleasedYear(int year)
-	{
+	
+	public void setReleasedYear(int year){
 		this.ReleasedYear = year;
 	}
-	public void setPrice(double price)
-	{
+	
+	public void setPrice(double price){
 		this.Price = price;
 	}
-	public void setTitle(String title)
-	{
+	
+	public void setTitle(String title){
 		this.Title = title;
 	}
-	public void setDirector(String first, String last, int birthYear, int films)
-	{
+	
+	
+	public void setDirector(String first, String last, int birthYear, int films){
 		this.Director = new Director(first, last, birthYear, films);
 	}
+	
 	//Getters
-	public int getDuration()
-	{
-		return Duration;
+	public int getDuration(){
+		return Duration;	
 	}
-	public int getReleasedYear()
-	{
+	
+	public int getReleasedYear(){
 		return ReleasedYear;
 	}
-	public double getPrice()
-	{
+	
+	public double getPrice(){
 		return Price;
 	}
-	public String getTitle()
-	{
+	
+	public String getTitle(){
 		return Title;
 	}
-	public Director getDirector()
-	{
+	
+	public Director getDirector(){
 		return Director;
 	}
 
-	public String toString()
-	{
+	public String toString(){
 		return("Title: " + this.getTitle() + 
 				"\nPublished in: " + this.getReleasedYear() +
 				"\nDuration: " + this.getDuration() + " minutes" +
