@@ -24,8 +24,9 @@ public class Lab1
 		System.out.println(movie.toString());
 
 		Movie HarryPotter1 = new Movie(152, 2001, 3.99, "Harry Potter and the Philosopher's Stone", new Director("Chris", "Columbus", 1958, 20));
-		
-		
+		Director HPDirector;
+		HPDirector = HarryPotter1.getDirector();
+		HPDirector.setNumOfFilm(HPDirector.getNumOfFilme() + 1);
 		//test runs
 		System.out.println("*****************************TEST RUN*********************************");
 		//print out the state of the object
