@@ -25,6 +25,7 @@ public class Director
 	public Director(){
 	}
 	
+	//Copy Contructor
 	public Director(String first, String last, int year, int film)	{
 		this.FirstName = first;
 		this.LastName = last;

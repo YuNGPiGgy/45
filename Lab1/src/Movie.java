@@ -23,10 +23,12 @@ public class Movie
 	private String Title;
 	private Director Director;
 	
+	//Default Constructor
 	public Movie(){
 		
 	}
 	
+	//Copy Constructor
 	public Movie(int time, int year, double price, String title, Director director){
 		this.Duration = time;
 		this.ReleasedYear = year;
@@ -78,6 +80,7 @@ public class Movie
 		return Director;
 	}
 
+	//String that will show when printed
 	public String toString(){
 		return("Title: " + this.getTitle() + 
 				"\nPublished in: " + this.getReleasedYear() +
