@@ -1,9 +1,10 @@
 /******45J lab***********
-Yung-Chu Chuang 50926235
-tzulingw Tzu-Ling Wang	77721457
-----------------------------------
-this Movie class is a class where you can store the information for the movie. There are 5
-attributes for this class, Duration, RealeasedYear, Price, Title, and Director.
+//Yung-Chu Chuang 50926235
+//tzulingw Tzu-Ling Wang	77721457
+//----------------------------------
+//this Movie class is a class where you can store the 
+//information for the movie. There are 5 attributes
+ //for this class, Duration, RealeasedYear, Price, Title, and Director.
 ************************/
 
 public class Movie

@@ -1,10 +1,13 @@
 /******45J lab***********
-Yung-Chu Chuang 50926235
-tzulingw Tzu-Ling Wang	77721457
-----------------------------------
-this file 
+//Yung-Chu Chuang 50926235
+//tzulingw Tzu-Ling Wang	77721457
+//----------------------------------
+//this file contains director object, and we used setter
+//methods to set the vales and getters to get the 
+//info that we are asking for. 
 ************************/
 
+//constructor
 public class Director
 {
 	/*
@@ -18,6 +21,7 @@ public class Director
 	private int BirthYear;
 	private int NumOfFilm;
 	
+	//default constructor
 	public Director(){
 	}
 	

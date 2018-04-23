@@ -1,14 +1,15 @@
 /******45J lab***********
-Yung-Chu Chuang 50926235
-tzulingw Tzu-Ling Wang	77721457
-----------------------------------
-this file is our main, and it does test run by using the to.string method.
-
+//Yung-Chu Chuang 50926235
+//tzulingw Tzu-Ling Wang	77721457
+//----------------------------------
+//this file contains main, and it presents 
+//all the movie info by using the to.string method.
 ************************/
 
 public class Lab1
 {
 	public static void main(String[] args){
+		//these will invoke default constructor
 		Movie HarryPotter1 = new Movie(152, 2001, 3.99, "Harry Potter and the Philosopher's Stone", new Director("Chris", "Columbus", 1958, 20));
 		Movie HarryPotter2 = new Movie(161, 2002, 3.99, "Harry Potter and the Chamber of Secrets", new Director("Chris", "Columbus", 1958, 20));
 		Movie HarryPotter3 = new Movie(142, 2004, 5.99, "Harry Potter and the Prisoner of Azkaban", new Director("Alfonso", "Cuar鏮", 1961, 17));
@@ -18,7 +19,9 @@ public class Lab1
 		Movie HarryPotter7_1 = new Movie(146, 2010, 19.99, "Harry Potter and the Deathly Hallows � Part 1", new Director("David", "Yates", 1963, 27));
 		Movie HarryPotter7_2 = new Movie(130, 2011, 19.99, "Harry Potter and the Deathly Hallows � Part 2", new Director("David", "Yates", 1963, 27));
 	
+		//test runs
 		System.out.println("*****************************TEST RUN*********************************");
+		//print out the state of the object
 		System.out.println(HarryPotter1.toString());
 		System.out.println("-----------------------------------------------------------------------------");
 		System.out.println(HarryPotter2.toString());
