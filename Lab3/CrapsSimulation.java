@@ -67,27 +67,19 @@ public class CrapsSimulation
 			System.out.println("Enter the amount of money you will bring to the table: ");
 			userBalance = input.nextInt();
 			crapsMetricsMonitor.setMaxBalance(userBalance);
-			System.out.println("Enter the bet amount between $1 and $" + userBalance + ": ");
-			int bet = input.nextInt();
-			//Prevent User to bet more than balance
-			while (bet < 1 || bet > userBalance)
-			{
-				System.out.println("Invalid bet! Not Enough Balance (" + userBalance + ") Left :");
-				bet = input.nextInt();
-			}
 			
-			//If balance fall below original bet, use all the balance
-			while (userBalance > 0)
+			boolean keepBetting = true;
+			while (keepBetting)
 			{
-				if (userBalance < bet)
+				System.out.println("Enter the bet amount between $1 and $" + userBalance + ": ");
+				int bet = input.nextInt();
+				//Prevent User to bet more than balance
+				while (bet < 1 || bet > userBalance)
 				{
-					userBet = userBalance;
+					System.out.println("Invalid bet! Not Enough Balance (" + userBalance + ") Left :");
+					bet = input.nextInt();
 				}
-				else
-				{
-					userBet = bet;
-				}
-		
+				userBet = bet;
 				System.out.println(userName + " bets $" + userBet);
 				
 				//Start Game
@@ -122,6 +114,17 @@ public class CrapsSimulation
 					crapsMetricsMonitor.setMaxBalance(userBalance);
 					crapsMetricsMonitor.setBestGame(crapsMetricsMonitor.getGamesPlayed());
 				}
+				System.out.print("Bet again? 'y' or 'n': ");
+				String replay = input.next();
+				if (replay.equalsIgnoreCase("y"))
+				{
+					continue;
+				}
+				else
+				{
+					keepBetting = false;
+				}
+				
 			}
 			//Ask for replay or quit
 			crapsMetricsMonitor.printStatistics();
