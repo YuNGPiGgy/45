@@ -33,6 +33,8 @@ public class CrapsGame
 	}
 	
 	//Exceptions
+	
+	//check name and throw exception
 	static void checkName(String name) throws InvalidPlayerNameException
 	{
 		String empty = "";
@@ -41,18 +43,21 @@ public class CrapsGame
 			throw new InvalidPlayerNameException("Player Name Cannot Be Empty");
 	}
 	
+	//Check Balance and throw exception
 	static void checkBalance(int balance) throws NegativeBalanceException
 	{
 		if (balance < 0)
 			throw new NegativeBalanceException("Cannot Bring Negative Money");
 	}
 	
+	//Check bet and throw exception
 	static void checkNegativeBet(int bet) throws NegativeBetException
 	{
 		if (bet < 0)
 			throw new NegativeBetException("Cannot Bet Negative Money");
 	}
 	
+	//Check bet and throw exception
 	static void checkBet(int bet, int balance) throws BalanceLimitException
 	{
 		if (bet < balance)

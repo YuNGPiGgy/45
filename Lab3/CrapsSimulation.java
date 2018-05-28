@@ -53,6 +53,7 @@ public class CrapsSimulation
 		start();
 	}
 	
+	//Ask for user name
 	public String askName()
 	{
 		System.out.println("Welcome to SimCraps! Enter your user name: ");
@@ -60,6 +61,7 @@ public class CrapsSimulation
 		return userName;
 	}
 	
+	//Ask for balance
 	public int askBalance()
 	{
 		System.out.println("Enter the amount of money you will bring to the table: ");
@@ -67,6 +69,7 @@ public class CrapsSimulation
 		return userBalance;
 	}
 	
+	//Asl for bet
 	public int askBet()
 	{
 		System.out.println("Enter the bet amount between $1 and $" + userBalance + ": ");
