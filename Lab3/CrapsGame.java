@@ -38,7 +38,6 @@ public class CrapsGame
 	//check name and throw exception
 	static void checkName(String name) throws InvalidPlayerNameException
 	{
-		System.out.println(name.trim().length() < 0);
 		if (name.trim().length() < 1)
 			throw new InvalidPlayerNameException("Player Name Cannot Be Empty");
 	}
