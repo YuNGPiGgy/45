@@ -1,6 +1,6 @@
 /******45J lab***********
 //yungchc1 Yung-Chu Chuang 50926235
-//----------------------------------
+//tzulingw Tzu-Ling Wang   77721457
 //
 //
 ************************
@@ -57,7 +57,7 @@ public class CrapsSimulation
 	public String askName()
 	{
 		System.out.println("Welcome to SimCraps! Enter your user name: ");
-		userName = input.next();
+		userName = input.nextLine();
 		return userName;
 	}
 	
