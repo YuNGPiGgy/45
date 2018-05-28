@@ -53,6 +53,12 @@ public class CrapsSimulation
 		start();
 	}
 	
+	public String askName()
+	{
+		System.out.println("Welcome to SimCraps! Enter your user name: ");
+		userName = input.next();
+		return userName;
+	}
 	//The Game Simulation that prompts the user for the name, budget, and bets
 	public void start()
 	{
@@ -61,8 +67,16 @@ public class CrapsSimulation
 		while (Playing)
 		{
 			//User Information
-			System.out.println("Welcome to SimCraps! Enter your user name: ");
-			userName = input.next();
+			userName = askName();
+			try 
+			{
+				CrapsGame.checkName(userName);
+			}
+			catch(Exception e)
+			{
+				System.out.println("Exception occured: " + e);
+				askName();
+			}
 			System.out.println("Hello " + userName + "!");
 			System.out.println("Enter the amount of money you will bring to the table: ");
 			userBalance = input.nextInt();
