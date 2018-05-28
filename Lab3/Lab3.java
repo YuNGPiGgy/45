@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 /***********************45J lab****************************
 //yungchc1   Yung-Chu Chuang 50926235
 //tzulingw	 Tzu-Ling Wang	 77721457
+=======
+/******45J lab***********
+//yungchc1 Yung-Chu Chuang 50926235
+//tzulingw Tzu-Ling Wang   77721457
+>>>>>>> cd009c8f7254a117fed9855e2a8642b62bf13bea
 //
 //This main function which starts lab3 the entire program.
 ************************************************************

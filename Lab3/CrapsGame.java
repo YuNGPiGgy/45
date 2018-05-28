@@ -1,5 +1,6 @@
 /******45J lab***********
 //yungchc1 Yung-Chu Chuang 50926235
+//tzulingw Tzu-Ling Wang   77721457
 //----------------------------------
 //
 //
@@ -37,9 +38,8 @@ public class CrapsGame
 	//check name and throw exception
 	static void checkName(String name) throws InvalidPlayerNameException
 	{
-		String empty = "";
-		String space = " ";
-		if (name.equals("1") || name.equals(space))
+		System.out.println(name.trim().length() < 0);
+		if (name.trim().length() < 1)
 			throw new InvalidPlayerNameException("Player Name Cannot Be Empty");
 	}
 	
