@@ -10,4 +10,10 @@
 /NegativeBalanceException.class
 /InvalidPlayernameException.class
 /UnknownAnswerException.class
+<<<<<<< HEAD
 /negativeBetTest.class
+=======
+/CrapsGameTest.class
+/CrapsGameExceptions.class
+/InvalidPlayerNameException.class
+>>>>>>> ea4ef1f5161a01b4dd4c37fe1bbe8d1ff4970e12

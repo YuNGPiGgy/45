@@ -21,7 +21,7 @@ o	Public methods that this class must implement are:
 import java.util.Random;
 
 public class CrapsGame
-{
+{	
 	private CrapsMetricsMonitor crapsMetricsMonitor;
 	private int numRolls;
 	
@@ -30,6 +30,33 @@ public class CrapsGame
 	{
 		this.numRolls = 0;
 		this.crapsMetricsMonitor = Monitor;
+	}
+	
+	//Exceptions
+	static void checkName(String name) throws InvalidPlayerNameException
+	{
+		String empty = "";
+		String space = " ";
+		if (name.equals("1") || name.equals(space))
+			throw new InvalidPlayerNameException("Player Name Cannot Be Empty");
+	}
+	
+	static void checkBalance(int balance) throws NegativeBalanceException
+	{
+		if (balance < 0)
+			throw new NegativeBalanceException("Cannot Bring Negative Money");
+	}
+	
+	static void checkNegativeBet(int bet) throws NegativeBetException
+	{
+		if (bet < 0)
+			throw new NegativeBetException("Cannot Bet Negative Money");
+	}
+	
+	static void checkBet(int bet, int balance) throws BalanceLimitException
+	{
+		if (bet < balance)
+			throw new BalanceLimitException("Bet Over Balance");
 	}
 	
 	//Quick Dice Rolling Function that Sums the Two Dice Rolled
@@ -43,7 +70,7 @@ public class CrapsGame
 	
 	//General Game Play Determining Win or Lose States
 	public boolean playGame()
-	{
+	{		
 		numRolls = 1;
 		crapsMetricsMonitor.updateGamesPlayed();
 		int diceRolled = RollDice();
@@ -95,4 +122,4 @@ public class CrapsGame
 			}
 		}
 	}
-}
+}	
