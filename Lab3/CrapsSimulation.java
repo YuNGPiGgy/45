@@ -59,6 +59,21 @@ public class CrapsSimulation
 		userName = input.next();
 		return userName;
 	}
+	
+	public int askBalance()
+	{
+		System.out.println("Enter the amount of money you will bring to the table: ");
+		userBalance = input.nextInt();
+		return userBalance;
+	}
+	
+	public int askBet()
+	{
+		System.out.println("Enter the bet amount between $1 and $" + userBalance + ": ");
+		userBet = input.nextInt();
+		return userBet;
+	}
+	
 	//The Game Simulation that prompts the user for the name, budget, and bets
 	public void start()
 	{
@@ -67,6 +82,8 @@ public class CrapsSimulation
 		while (Playing)
 		{
 			//User Information
+			
+			//Ask User Name
 			userName = askName();
 			try 
 			{
@@ -78,22 +95,44 @@ public class CrapsSimulation
 				askName();
 			}
 			System.out.println("Hello " + userName + "!");
-			System.out.println("Enter the amount of money you will bring to the table: ");
-			userBalance = input.nextInt();
+			//Ask User Balance
+			userBalance = askBalance();
+			try
+			{
+				CrapsGame.checkBalance(userBalance);
+			}
+			catch(Exception e)
+			{
+				System.out.println("Exception occured: " + e);
+				askBalance();
+			}
 			crapsMetricsMonitor.setMaxBalance(userBalance);
 			
+			//Ask User Bet
 			boolean keepBetting = true;
 			while (keepBetting)
 			{
-				System.out.println("Enter the bet amount between $1 and $" + userBalance + ": ");
-				int bet = input.nextInt();
-				//Prevent User to bet more than balance
-				while (bet < 1 || bet > userBalance)
+				userBet = askBet();
+				try
 				{
-					System.out.println("Invalid bet! Not Enough Balance (" + userBalance + ") Left :");
-					bet = input.nextInt();
+					CrapsGame.checkBet(userBet, userBalance);
 				}
-				userBet = bet;
+				catch(Exception e)
+				{
+					System.out.println("Exception occured: " + e);
+					askBet();
+				}
+				
+				try
+				{
+					CrapsGame.checkNegativeBet(userBet);
+				}
+				catch(Exception e)
+				{
+					System.out.println("Exception occured: " + e);
+					askBet();
+				}
+
 				System.out.println(userName + " bets $" + userBet);
 				
 				//Start Game

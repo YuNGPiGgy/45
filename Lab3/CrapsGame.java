@@ -32,16 +32,31 @@ public class CrapsGame
 		this.crapsMetricsMonitor = Monitor;
 	}
 	
+	//Exceptions
 	static void checkName(String name) throws InvalidPlayerNameException
 	{
-		if (name.equals("1") || name.equals(" "))
-		{
+		String empty = "";
+		String space = " ";
+		if (name.equals("1") || name.equals(space))
 			throw new InvalidPlayerNameException("Player Name Cannot Be Empty");
-		}
-		else
-		{
-			System.out.println("here");  
-		}
+	}
+	
+	static void checkBalance(int balance) throws NegativeBalanceException
+	{
+		if (balance < 0)
+			throw new NegativeBalanceException("Cannot Bring Negative Money");
+	}
+	
+	static void checkNegativeBet(int bet) throws NegativeBetException
+	{
+		if (bet < 0)
+			throw new NegativeBetException("Cannot Bet Negative Money");
+	}
+	
+	static void checkBet(int bet, int balance) throws BalanceLimitException
+	{
+		if (bet < balance)
+			throw new BalanceLimitException("Bet Over Balance");
 	}
 	
 	//Quick Dice Rolling Function that Sums the Two Dice Rolled
