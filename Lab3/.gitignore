@@ -11,3 +11,5 @@
 /InvalidPlayernameException.class
 /UnknownAnswerException.class
 /CrapsGameTest.class
+/CrapsGameExceptions.class
+/InvalidPlayerNameException.class
