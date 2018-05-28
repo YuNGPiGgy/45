@@ -5,3 +5,8 @@
 /Lab3.class
 /CrapsExceptions.class
 /Lab3Test.class
+/BalanceLimitException.class
+/NegativeBetException.class
+/NegativeBalanceException.class
+/InvalidPlayernameException.class
+/UnknownAnswerException.class
