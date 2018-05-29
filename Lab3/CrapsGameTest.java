@@ -1,73 +1,18 @@
 import static org.junit.Assert.*;
-
 import org.junit.Test;
 
-public class negativeBetTest {
+public class CrapsGameTest {
 
 	@Test
 	public void test() {
 		fail("Not yet implemented");
 	}
 
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-import static org.junit.Assert.*;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
-/**
- * The test class CrapsGameTest.
- *
- * @author  (your name)
- * @version (a version number or a date)
- */
-public class CrapsGameTest
-{
-    /**
-     * Default constructor for test class CrapsGameTest
-     */
-    public CrapsGameTest()
-    {
-    }
-
-    /**
-     * Sets up the test fixture.
-     *
-     * Called before every test case method.
-     */
-    @Before
-    public void setUp()
-    {
-    }
-
-    /**
-     * Tears down the test fixture.
-     *
-     * Called after every test case method.
-     */
-    @After
-    public void tearDown()
-    {
-    }
-
     @Test(expected = UnknownAnswerException.class)
-    public void testUnknownAnswerException() throws GameExceptions
+    public void testUnknownAnswerException() throws Exception
     {
-        CrapsGame game = new CrapsGame(new CrapsMetricsMonitor(), "Cheri", 1000);
-        game.unknownAnswerException("a");
+        CrapsGame testGame = new CrapsGame(new CrapsMetricsMonitor());
+        testGame.UnknownAnswerException("a");
     }
 
     @Test(expected = InvalidPlayerNameException.class)

@@ -59,8 +59,15 @@ public class CrapsGame
 	//Check bet and throw exception
 	static void checkBet(int bet, int balance) throws BalanceLimitException
 	{
-		if (bet < balance)
+		if (bet > balance)
 			throw new BalanceLimitException("Bet Over Balance");
+	}
+	
+	//check y or n
+	static void checkAnswer(String answer) throws UnknownAnswerException
+	{
+		if (answer == "x")
+			throw new UnknownAnswerException("Please Answer 'y' or 'n'");
 	}
 	
 	//Quick Dice Rolling Function that Sums the Two Dice Rolled

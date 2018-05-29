@@ -29,10 +29,11 @@ public class CrapsSimulation
 {
 	private CrapsGame crapsGame;
 	private CrapsMetricsMonitor crapsMetricsMonitor;
-	
 	private String userName;
 	private int userBalance;
 	private int userBet;
+	private String replay;
+	private String rebet;
 	private int currentWinStreak;
 	private int currentLoseStreak;
 	
@@ -46,10 +47,11 @@ public class CrapsSimulation
 		this.userName = "";
 		this.userBalance = 0;
 		this.userBet = 0;
+		this.replay = "";
+		this.rebet = "";
 		this.currentWinStreak = 0;
 		this.currentLoseStreak = 0;
 		this.input = new Scanner(System.in);
-		
 		start();
 	}
 	
@@ -57,35 +59,43 @@ public class CrapsSimulation
 	public String askName()
 	{
 		System.out.println("Welcome to SimCraps! Enter your user name: ");
-		userName = input.nextLine();
-		return userName;
+		return input.nextLine();
 	}
 	
 	//Ask for balance
 	public int askBalance()
 	{
 		System.out.println("Enter the amount of money you will bring to the table: ");
-		userBalance = input.nextInt();
-		return userBalance;
+		return input.nextInt();
 	}
 	
-	//Asl for bet
+	//Ask for bet
 	public int askBet()
 	{
 		System.out.println("Enter the bet amount between $1 and $" + userBalance + ": ");
-		userBet = input.nextInt();
-		return userBet;
+		return input.nextInt();
+	}
+	
+	//Ask for replay
+	public String askReplay()
+	{
+		System.out.println("Play again? 'y' or 'n': ");
+		return input.next();
+	}
+	
+	public String askReBet()
+	{
+		System.out.println("Bet again? 'y' or 'n': ");
+		return input.next();
 	}
 	
 	//The Game Simulation that prompts the user for the name, budget, and bets
 	public void start()
 	{
 		boolean Playing = true;
-		
 		while (Playing)
 		{
 			//User Information
-			
 			//Ask User Name
 			userName = askName();
 			try 
@@ -113,7 +123,7 @@ public class CrapsSimulation
 			
 			//Ask User Bet
 			boolean keepBetting = true;
-			while (keepBetting)
+			while (keepBetting && userBalance > 0)
 			{
 				userBet = askBet();
 				try
@@ -135,7 +145,6 @@ public class CrapsSimulation
 					System.out.println("Exception occured: " + e);
 					askBet();
 				}
-
 				System.out.println(userName + " bets $" + userBet);
 				
 				//Start Game
@@ -170,22 +179,45 @@ public class CrapsSimulation
 					crapsMetricsMonitor.setMaxBalance(userBalance);
 					crapsMetricsMonitor.setBestGame(crapsMetricsMonitor.getGamesPlayed());
 				}
-				System.out.print("Bet again? 'y' or 'n': ");
-				String replay = input.next();
-				if (replay.equalsIgnoreCase("y"))
+				if (userBalance > 0)
 				{
-					continue;
+					rebet = askReBet();
+					try
+					{
+						CrapsGame.checkAnswer(rebet);
+					}
+					catch(Exception e)
+					{
+						System.out.println("Exception occured: " + e);
+						askReBet();
+					}
+					
+					if (rebet.equalsIgnoreCase("y"))
+					{
+						continue;
+					}
+					else
+					{
+						keepBetting = false;
+					}
 				}
 				else
 				{
 					keepBetting = false;
 				}
-				
 			}
 			//Ask for replay or quit
 			crapsMetricsMonitor.printStatistics();
-			System.out.print("Replay? Enter 'y' or 'n': ");
-			String replay = input.next();
+			replay = askReplay();
+			try
+			{
+				CrapsGame.checkAnswer(replay);
+			}
+			catch(Exception e)
+			{
+				System.out.println("Exception occured: " + e);
+				askReplay();
+			}
 			if (replay.equalsIgnoreCase("y"))
 			{
 				crapsMetricsMonitor.reset();
