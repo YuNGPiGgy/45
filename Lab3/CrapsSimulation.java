@@ -8,16 +8,16 @@
  o	A class representing all the information for the Simulation. This includes:
 	o	A CrapsGame object
 	o	A CrapsMetricsMonitor object
-	o	The user’s name
-	o	The user’s balance
-	o	The user’s bet
+	o	The userî–¸ name
+	o	The userî–¸ balance
+	o	The userî–¸ bet
 	o	The current win streak
 	o	The current lose streak
 	
 o	Public methods that this class must implement are:
 	o	CrapsSimulation()
 		o	Constructor that initializes all fields to default values and 
-			constructs any objects used (i.e. Scanner, CrapsMetricsMonitor, …)
+			constructs any objects used (i.e. Scanner, CrapsMetricsMonitor, ï¿½)
 	o	void start()
 		o	Main loop of a single simulation run. This is where the user inputs 
 			their name, balance, and bet, runs the simulation, and 
@@ -110,6 +110,7 @@ public class CrapsSimulation
 			System.out.println("Hello " + userName + "!");
 			//Ask User Balance
 			userBalance = askBalance();
+			
 			try
 			{
 				CrapsGame.checkBalance(userBalance);

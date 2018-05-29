@@ -23,11 +23,12 @@ public class CrapsMetricsMonitor
 	private int gamesWon;		//Number of games won
 	private int gamesLost;		//Number of games lost
 	private int maxRolls;		//Maximum number of rolls in a single game
-	private int naturalRolls;	//“Natural” roll count
-	private int crapsRolls;		//“Craps” roll count
+	private int naturalRolls;	//î˜°aturalï¿½ roll count
+	private int crapsRolls;		//î˜¥rapsï¿½ roll count
 	private int maxWinStreak;	//Maximum winning streak
 	private int maxLoseStreak;	//Maximum losing streak
 	private int maxBalance;		//Maximum balance throughout simulation
+	private int balance;		//Balance the user has left
 	private int totalBet;		//The total number of bets made before you run out of money
 	private int bestGame;		//The game number when the Maximum balance was obtained
 	
@@ -43,6 +44,7 @@ public class CrapsMetricsMonitor
 		this.maxWinStreak = 0;
 		this.maxLoseStreak = 0;
 		this.maxBalance = 0;
+		this.balance = 0;
 		this.totalBet = 0;
 		this.bestGame = 0;
 	}
@@ -57,8 +59,10 @@ public class CrapsMetricsMonitor
 	public int getMaxWin()			{return maxWinStreak;}
 	public int getMaxLose()			{return maxLoseStreak;}
 	public int getMaxBalance()		{return maxBalance;}
+	public int getBalance()			{return balance;}
 	public int getTotalBet()		{return totalBet;}
 	public int getBestGame()		{return bestGame;}
+
 	
 	//Setters & Updates
 	public void updateGamesPlayed()		{this.gamesPlayed += 1;}
@@ -71,6 +75,7 @@ public class CrapsMetricsMonitor
 	public void setMaxWin(int i)		{this.maxWinStreak = i;}
 	public void setMaxLose(int i)		{this.maxLoseStreak = i;}
 	public void setMaxBalance(int i)	{this.maxBalance = i;}
+	public void setBalance(int i)	    {this.balance = i;}
 	public void setBestGame(int i)		{this.bestGame = i;}
 	public void setMaxRolls(int i)		{this.maxRolls = i;}
 	
@@ -103,6 +108,7 @@ public class CrapsMetricsMonitor
 		maxWinStreak = 0;
 		maxLoseStreak = 0;
 		maxBalance = 0;
+		balance = 0;
 		totalBet = 0;
 		bestGame = 0;
 	}

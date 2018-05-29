@@ -23,7 +23,7 @@ import java.util.Random;
 
 public class CrapsGame
 {	
-	private CrapsMetricsMonitor crapsMetricsMonitor;
+	protected CrapsMetricsMonitor crapsMetricsMonitor;
 	private int numRolls;
 	
 	//Constructor
