@@ -59,7 +59,8 @@ public class CrapsSimulation
 	public String askName()
 	{
 		System.out.println("Welcome to SimCraps! Enter your user name: ");
-		return input.nextLine();
+		String name = input.nextLine();
+		return name;
 	}
 	
 	//Ask for balance
@@ -80,71 +81,84 @@ public class CrapsSimulation
 	public String askReplay()
 	{
 		System.out.println("Play again? 'y' or 'n': ");
-		return input.next();
+		return input.nextLine();
 	}
 	
+	//Ask for rebet
 	public String askReBet()
 	{
 		System.out.println("Bet again? 'y' or 'n': ");
-		return input.next();
+		String answer = input.nextLine();
+		return answer;
 	}
 	
 	//The Game Simulation that prompts the user for the name, budget, and bets
 	public void start()
 	{
 		boolean Playing = true;
+		boolean Pass;
 		while (Playing)
 		{
 			//User Information
 			//Ask User Name
-			userName = askName();
-			try 
+			Pass = false;
+			while (!Pass)
 			{
-				CrapsGame.checkName(userName);
-			}
-			catch(Exception e)
-			{
-				System.out.println("Exception occured: " + e);
-				askName();
+				userName = askName();
+				try 
+				{
+					CrapsGame.checkName(userName);
+					Pass = true;
+				}
+				catch(Exception e)
+				{
+					System.out.println("Exception occured: " + e);
+				}
 			}
 			System.out.println("Hello " + userName + "!");
 			//Ask User Balance
-			userBalance = askBalance();
 			
-			try
+			Pass = false;
+			while (!Pass)
 			{
-				CrapsGame.checkBalance(userBalance);
-			}
-			catch(Exception e)
-			{
-				System.out.println("Exception occured: " + e);
-				askBalance();
+				userBalance = askBalance();
+				try
+				{
+					CrapsGame.checkBalance(userBalance);
+					Pass = true;
+				}
+				catch(Exception e)
+				{
+					System.out.println("Exception occured: " + e);
+				}
 			}
 			crapsMetricsMonitor.setMaxBalance(userBalance);
 			
 			//Ask User Bet
+			Pass = false;
 			boolean keepBetting = true;
 			while (keepBetting && userBalance > 0)
 			{
-				userBet = askBet();
-				try
+				while (!Pass)
 				{
-					CrapsGame.checkBet(userBet, userBalance);
-				}
-				catch(Exception e)
-				{
-					System.out.println("Exception occured: " + e);
-					askBet();
-				}
-				
-				try
-				{
-					CrapsGame.checkNegativeBet(userBet);
-				}
-				catch(Exception e)
-				{
-					System.out.println("Exception occured: " + e);
-					askBet();
+					userBet = askBet();
+					try
+					{
+						CrapsGame.checkBet(userBet, userBalance);
+						try
+						{
+							CrapsGame.checkNegativeBet(userBet);
+							Pass = true;
+						}
+						catch(Exception e)
+						{
+							System.out.println("Exception occured: " + e);
+						}
+					}
+					catch(Exception e)
+					{
+						System.out.println("Exception occured: " + e);
+					}
 				}
 				System.out.println(userName + " bets $" + userBet);
 				
@@ -182,19 +196,23 @@ public class CrapsSimulation
 				}
 				if (userBalance > 0)
 				{
-					rebet = askReBet();
-					try
+					Pass = false;
+					while (!Pass)
 					{
-						CrapsGame.checkAnswer(rebet);
+						rebet = askReBet();
+						try
+						{
+							CrapsGame.checkAnswer(rebet);
+							Pass = true;
+						}
+						catch(Exception e)
+						{
+							System.out.println("Exception occured: " + e);
+						}
 					}
-					catch(Exception e)
-					{
-						System.out.println("Exception occured: " + e);
-						askReBet();
-					}
-					
 					if (rebet.equalsIgnoreCase("y"))
 					{
+						Pass = false;
 						continue;
 					}
 					else
@@ -209,17 +227,21 @@ public class CrapsSimulation
 			}
 			//Ask for replay or quit
 			crapsMetricsMonitor.printStatistics();
-			replay = askReplay();
-			try
-			{
-				CrapsGame.checkAnswer(replay);
-			}
-			catch(Exception e)
-			{
-				System.out.println("Exception occured: " + e);
-				askReplay();
-			}
 			
+			Pass = false;
+			while (!Pass)
+			{
+				replay = askReplay();
+				try
+				{
+					CrapsGame.checkAnswer(replay);
+					Pass = true;
+				}
+				catch(Exception e)
+				{
+					System.out.println("Exception occured: " + e);
+				}
+			}
 			if (replay.equalsIgnoreCase("y"))
 			{
 				crapsMetricsMonitor.reset();

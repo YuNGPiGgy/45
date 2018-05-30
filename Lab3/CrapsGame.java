@@ -45,14 +45,14 @@ public class CrapsGame
 	//Check Balance and throw exception
 	static void checkBalance(int balance) throws NegativeBalanceException
 	{
-		if (balance < 0)
+		if (balance == 0 || balance < 1)
 			throw new NegativeBalanceException("Cannot Bring Negative Money");
 	}
 	
 	//Check bet and throw exception
 	static void checkNegativeBet(int bet) throws NegativeBetException
 	{
-		if (bet < 0)
+		if (bet < 0 || bet == 0)
 			throw new NegativeBetException("Cannot Bet Negative Money");
 	}
 	
@@ -66,7 +66,7 @@ public class CrapsGame
 	//check y or n
 	static void checkAnswer(String answer) throws UnknownAnswerException
 	{
-		if (answer == "x")
+		if (!answer.equalsIgnoreCase("Y") || !answer.equalsIgnoreCase("N"))
 			throw new UnknownAnswerException("Please Answer 'y' or 'n'");
 	}
 	

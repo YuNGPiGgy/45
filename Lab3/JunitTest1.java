@@ -1,107 +1,128 @@
-import static org.junit.Assert.*;
+/******45J lab***********
+//yungchc1 Yung-Chu Chuang 50926235
+//tzulingw Tzu-Ling Wang   77721457
+//
+//
+************************
+*JUnit Testing with 5 Error Cases, 5 Normal Cases, and 8 Boundary Cases
+*/
 
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 /****************************ERROR TEST******************************/
 
 public class JunitTest1 {
 	private CrapsGame game = new CrapsGame(new CrapsMetricsMonitor());
-	@Test //errorTest1
-	public void testcheckBalance() throws NegativeBalanceException{
-	System.out.println("Start balace checking test");
-	//game.crapsMetricsMonitor.setBalance(-200);
-	game.checkBalance(-200);
+	
+	//Make sure NegativeBalanceException is thrown
+	@Test (expected = NegativeBalanceException.class)
+	public void testNegBalance() throws NegativeBalanceException{
+	game.checkBalance(-10);
 	}
-	@Test //errorTest2
-	public void testcheckName() throws InvalidPlayerNameException{
-	System.out.println("Start name checking test");
-	game.checkName(" ");
-	}	
-	@Test //errorTest3   
-	public void checkNegativeBet() throws NegativeBetException{
-	System.out.println("Start negative bet checking test");	
-	game.checkNegativeBet(-20);
+	
+	//Make sure InvalidPlayerNameException is thrown
+	@Test (expected = InvalidPlayerNameException.class)
+	public void errorName() throws InvalidPlayerNameException{
+	game.checkName("  ");
 	}
-	@Test //errorTest4
-	public void testcheckBet12() throws NegativeBetException{
-	System.out.println("Start bet checking test");	
-	game.checkNegativeBet(-1000);
+	
+	//Make sure BalanceLimitException is thrown
+	@Test (expected = BalanceLimitException.class)
+	public void errorLimitBet() throws BalanceLimitException{
+	game.checkBet(100,10);
 	}
-	@Test //errorTest5   
-	public void testcheckBet() throws NegativeBetException{
-		System.out.println("Start bet checking test");	
-		game.checkNegativeBet(-10);
+	
+	//Make sure NegativeBetException is thrown
+	@Test (expected = NegativeBetException.class) 
+	public void errorNegBet() throws NegativeBetException{
+	game.checkNegativeBet(-10);
+	}
+	
+	//Make sure UnknownAnswerException is thrown
+	@Test (expected = UnknownAnswerException.class) 
+	public void errorAnswer() throws UnknownAnswerException{
+	game.checkAnswer("x");
 	}
 
 /****************************NORMAL TEST******************************/
-@Test //normalTest1
-public void testcheckBalance1() throws NegativeBalanceException{
-System.out.println("Start balace checking test");
-//game.crapsMetricsMonitor.setBalance(-200);
-game.checkBalance(200);
-}
-@Test //normalTest2
-public void testcheckName1() throws InvalidPlayerNameException{
-System.out.println("Start name checking test");
-game.checkName("Vivian");
-}	
-@Test //normalTest3   
-public void checkNegativeBet1() throws NegativeBetException{
-System.out.println("Start negative bet checking test");	
-game.checkNegativeBet(20);
-}
-@Test //normalTest4
-public void testcheckBet111() throws NegativeBetException{
-System.out.println("Start bet checking test");	
-game.checkNegativeBet(1000);
-}
-@Test //normalTest5   
-public void testcheckBet112() throws NegativeBetException{
-	System.out.println("Start bet checking test");	
+	//Make sure NegativeBalanceException is not thrown
+	@Test
+	public void normalNegBalance() throws NegativeBalanceException{
+	game.checkBalance(10);
+	}
+	
+	//Make sure InvalidPlayerNameException is not thrown
+	@Test
+	public void normalName() throws InvalidPlayerNameException{
+	game.checkName("Peter");
+	}
+	
+	//Make sure BalanceLimitException is not thrown
+	@Test
+	public void normalLimitBet() throws BalanceLimitException{
+	game.checkBet(10,100);
+	}
+	
+	//Make sure NegativeBetException is not thrown
+	@Test
+	public void normalNegBet() throws NegativeBetException{
 	game.checkNegativeBet(10);
-}
+	}
+	
+	//Make sure UnknownAnswerException is not thrown
+	@Test
+	public void normalAnswer() throws UnknownAnswerException{
+	game.checkAnswer("Y");
+	}
+	
+	/****************************BOUNDARY TEST******************************/
+	//Make sure zero is invalid balance
+	@Test (expected = NegativeBalanceException.class)
+	public void boundaryNegBalance() throws NegativeBalanceException{
+	game.checkBalance(0);
+	}
+	
+	//Make sure zero is invalid balance
+	@Test (expected = NegativeBalanceException.class)
+	public void boundaryNegBalance2() throws NegativeBalanceException{
+	game.checkBalance(-0);
+	}
+	
+	//Make sure empty is also invalid player name
+	@Test (expected = InvalidPlayerNameException.class)
+	public void boundaryName() throws InvalidPlayerNameException{
+	game.checkName("");
+	}
+	
+	//Make sure space in player name is valid
+	@Test 
+	public void boundaryName2() throws InvalidPlayerNameException{
+	game.checkName("Peter Anteater");
+	}	
 
-/****************************BOUNDARY TEST******************************/
-@Test //boundaryTest1
-public void testcheckBalance0() throws NegativeBalanceException{
-System.out.println("Start balace checking test");
-//game.crapsMetricsMonitor.setBalance(-200);
-game.checkBalance(0);
-}
-@Test //boundaryTest2
-public void testcheckName01() throws InvalidPlayerNameException{
-System.out.println("Start name checking test");
-game.checkName("a");
-}	
-@Test //boundaryTest3
-public void testcheckName00() throws InvalidPlayerNameException{
-System.out.println("Start name checking test");
-game.checkName("b");
-}
-@Test //boundaryTest4
-public void testcheckName0() throws InvalidPlayerNameException{
-System.out.println("Start name checking test");
-game.checkName("c");
-}	
-@Test //boundaryTest5 
-public void checkNegativeBet0() throws NegativeBetException{
-System.out.println("Start negative bet checking test");	
-game.checkNegativeBet(20);
-}
-@Test //boundaryTest6
-public void testcheckBet11() throws NegativeBetException{
-System.out.println("Start bet checking test");	
-game.checkNegativeBet(1000);
-}
-@Test //boundaryTest7
-public void testcheckBet1() throws NegativeBetException{
-	System.out.println("Start bet checking test");	
-	game.checkNegativeBet(10);
-}
-@Test //boundaryTest8
-public void testcheckBet19() throws NegativeBetException{
-	System.out.println("Start bet checking test");	
-	game.checkNegativeBet(100);
+	// Make sure 0 is invalid bet
+	@Test (expected = NegativeBetException.class) 
+	public void boundaryNegBet() throws NegativeBetException{
+	game.checkNegativeBet(0);
+	}
+	
+	// Make sure 0 is invalid bet
+	@Test (expected = NegativeBetException.class)
+	public void boundaryNegBet2() throws NegativeBetException{
+	game.checkNegativeBet(-0);
+	}
+	
+	//Make sure bet = balance is valid
+	@Test
+	public void boundaryLimitBet() throws BalanceLimitException{
+	game.checkBet(10,10);
+	}
+	
+	//Make sure bet = balance is valid
+	@Test (expected = BalanceLimitException.class)
+	public void boundaryLimitBet2() throws BalanceLimitException{
+	game.checkBet(-10,10);
 	}
 }
-
+	
