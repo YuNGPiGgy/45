@@ -219,6 +219,7 @@ public class CrapsSimulation
 				System.out.println("Exception occured: " + e);
 				askReplay();
 			}
+			
 			if (replay.equalsIgnoreCase("y"))
 			{
 				crapsMetricsMonitor.reset();
