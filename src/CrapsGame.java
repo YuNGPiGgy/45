@@ -1,6 +1,5 @@
 /******45J lab***********
 //yungchc1 Yung-Chu Chuang 50926235
-//tzulingw Tzu-Ling Wang   77721457
 //----------------------------------
 //
 //
@@ -22,8 +21,8 @@ o	Public methods that this class must implement are:
 import java.util.Random;
 
 public class CrapsGame
-{	
-	protected CrapsMetricsMonitor crapsMetricsMonitor;
+{
+	private CrapsMetricsMonitor crapsMetricsMonitor;
 	private int numRolls;
 	
 	//Constructor
@@ -31,43 +30,6 @@ public class CrapsGame
 	{
 		this.numRolls = 0;
 		this.crapsMetricsMonitor = Monitor;
-	}
-	
-	//Exceptions
-	
-	//check name and throw exception
-	static void checkName(String name) throws InvalidPlayerNameException
-	{
-		if (name.trim().length() < 1)
-			throw new InvalidPlayerNameException("Player Name Cannot Be Empty");
-	}
-	
-	//Check Balance and throw exception
-	static void checkBalance(int balance) throws NegativeBalanceException
-	{
-		if (balance == 0 || balance < 1)
-			throw new NegativeBalanceException("Cannot Bring Negative Money");
-	}
-	
-	//Check bet and throw exception
-	static void checkNegativeBet(int bet) throws NegativeBetException
-	{
-		if (bet < 0 || bet == 0)
-			throw new NegativeBetException("Cannot Bet Negative Money");
-	}
-	
-	//Check bet and throw exception
-	static void checkBet(int bet, int balance) throws BalanceLimitException
-	{
-		if (bet > balance)
-			throw new BalanceLimitException("Bet Over Balance");
-	}
-	
-	//check y or n
-	static void checkAnswer(String answer) throws UnknownAnswerException
-	{
-		if (!answer.equalsIgnoreCase("Y") || !answer.equalsIgnoreCase("N"))
-			throw new UnknownAnswerException("Please Answer 'y' or 'n'");
 	}
 	
 	//Quick Dice Rolling Function that Sums the Two Dice Rolled
@@ -81,7 +43,7 @@ public class CrapsGame
 	
 	//General Game Play Determining Win or Lose States
 	public boolean playGame()
-	{		
+	{
 		numRolls = 1;
 		crapsMetricsMonitor.updateGamesPlayed();
 		int diceRolled = RollDice();
@@ -133,4 +95,4 @@ public class CrapsGame
 			}
 		}
 	}
-}	
+}
