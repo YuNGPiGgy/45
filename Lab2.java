@@ -7,7 +7,7 @@
 
  o	Contains the main method. All it does is construct a CrapsSimulation object and calls.start() on it.
 */
-public class Lab4
+public class Lab2
 {	
 	public static void main(String[] args)
 	{
