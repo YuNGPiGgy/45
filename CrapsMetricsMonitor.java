@@ -1,9 +1,8 @@
 /******45J lab***********
 //yungchc1 Yung-Chu Chuang 50926235
-//tzulingw Tzu-Ling Wang   77721457
+//----------------------------------
 //
-//This class get, set, and update all the useful information in our simulation. 
-// We also make a statistic table in this class. 
+//
 ************************
 
 o	A class representing all of the statistics gathered during a single simulation.
@@ -24,8 +23,8 @@ public class CrapsMetricsMonitor
 	private int gamesWon;		//Number of games won
 	private int gamesLost;		//Number of games lost
 	private int maxRolls;		//Maximum number of rolls in a single game
-	private int naturalRolls;	//î˜°aturalï¿½ roll count
-	private int crapsRolls;		//î˜¥rapsï¿½ roll count
+	private int naturalRolls;	//“Natural” roll count
+	private int crapsRolls;		//“Craps” roll count
 	private int maxWinStreak;	//Maximum winning streak
 	private int maxLoseStreak;	//Maximum losing streak
 	private int maxBalance;		//Maximum balance throughout simulation
