@@ -86,23 +86,23 @@ public class Lab4
 		t4.join();
 		t5.join();
 		
-		System.out.println(CS1.getTotalGamesPlayed());
-		System.out.println(CS2.getTotalGamesPlayed());
-		System.out.println(CS3.getTotalGamesPlayed());
-		System.out.println(CS4.getTotalGamesPlayed());
-		System.out.println(CS5.getTotalGamesPlayed());
-		int total = CS1.getTotalGamesPlayed()+CS2.getTotalGamesPlayed()+CS3.getTotalGamesPlayed()+CS4.getTotalGamesPlayed()+CS5.getTotalGamesPlayed();
+		System.out.println(CrapsGame1.getTotalGamesPlayed());
+		System.out.println(CrapsGame2.getTotalGamesPlayed());
+		System.out.println(CrapsGame3.getTotalGamesPlayed());
+		System.out.println(CrapsGame4.getTotalGamesPlayed());
+		System.out.println(CrapsGame5.getTotalGamesPlayed());
+		int total = CrapsGame1.getTotalGamesPlayed()+CrapsGame2.getTotalGamesPlayed()+CrapsGame3.getTotalGamesPlayed()+CrapsGame4.getTotalGamesPlayed()+CrapsGame5.getTotalGamesPlayed();
 		
 		System.out.println("thread 1 start time: " + t1StartTime);
 		System.out.println("thread 2 start time: " + t2StartTime);
 		System.out.println("thread 3 start time: " + t3StartTime);
 		System.out.println("thread 4 start time: " + t4StartTime);
 		System.out.println("thread 5 start time: " + t5StartTime);
-		System.out.println("thread 1 end   time: " + CS1.getFinTime());
-		System.out.println("thread 2 end   time: " + CS2.getFinTime());
-		System.out.println("thread 3 end   time: " + CS3.getFinTime());
-		System.out.println("thread 4 end   time: " + CS4.getFinTime());
-		System.out.println("thread 5 end   time: " + CS5.getFinTime());
+		System.out.println("thread 1 end   time: " + CrapsGame1.getFinTime());
+		System.out.println("thread 2 end   time: " + CrapsGame2.getFinTime());
+		System.out.println("thread 3 end   time: " + CrapsGame3.getFinTime());
+		System.out.println("thread 4 end   time: " + CrapsGame4.getFinTime());
+		System.out.println("thread 5 end   time: " + CrapsGame5.getFinTime());
 		System.out.println("total games played in all threads " + total);
 		
 		try {
@@ -117,11 +117,11 @@ public class Lab4
 			pw1.println("thread 3 start time: " + t3StartTime);
 			pw1.println("thread 4 start time: " + t4StartTime);
 			pw1.println("thread 5 start time: " + t5StartTime);
-			pw1.println("thread 1 end   time: " + CS1.getFinTime());
-			pw1.println("thread 2 end   time: " + CS2.getFinTime());
-			pw1.println("thread 3 end   time: " + CS3.getFinTime());
-			pw1.println("thread 4 end   time: " + CS4.getFinTime());
-			pw1.println("thread 5 end   time: " + CS5.getFinTime());
+			pw1.println("thread 1 end   time: " + CrapsGame1.getFinTime());
+			pw1.println("thread 2 end   time: " + CrapsGame2.getFinTime());
+			pw1.println("thread 3 end   time: " + CrapsGame3.getFinTime());
+			pw1.println("thread 4 end   time: " + CrapsGame4.getFinTime());
+			pw1.println("thread 5 end   time: " + CrapsGame5.getFinTime());
 			pw1.println("total games played in all threads " + total);
 			pw1.println();
 			pw1.println("*********END OF SIMULATION*********");
@@ -133,11 +133,11 @@ public class Lab4
 			pw2.println("thread 3 start time: " + t3StartTime);
 			pw2.println("thread 4 start time: " + t4StartTime);
 			pw2.println("thread 5 start time: " + t5StartTime);
-			pw2.println("thread 1 end   time: " + CS1.getFinTime());
-			pw2.println("thread 2 end   time: " + CS2.getFinTime());
-			pw2.println("thread 3 end   time: " + CS3.getFinTime());
-			pw2.println("thread 4 end   time: " + CS4.getFinTime());
-			pw2.println("thread 5 end   time: " + CS5.getFinTime());
+			pw2.println("thread 1 end   time: " + CrapsGame1.getFinTime());
+			pw2.println("thread 2 end   time: " + CrapsGame2.getFinTime());
+			pw2.println("thread 3 end   time: " + CrapsGame3.getFinTime());
+			pw2.println("thread 4 end   time: " + CrapsGame4.getFinTime());
+			pw2.println("thread 5 end   time: " + CrapsGame5.getFinTime());
 			pw2.println("total games played in all threads " + total);
 			pw2.println();
 			pw2.println("*********END OF SIMULATION*********");
@@ -149,11 +149,11 @@ public class Lab4
 			pw3.println("thread 3 start time: " + t3StartTime);
 			pw3.println("thread 4 start time: " + t4StartTime);
 			pw3.println("thread 5 start time: " + t5StartTime);
-			pw3.println("thread 1 end   time: " + CS1.getFinTime());
-			pw3.println("thread 2 end   time: " + CS2.getFinTime());
-			pw3.println("thread 3 end   time: " + CS3.getFinTime());
-			pw3.println("thread 4 end   time: " + CS4.getFinTime());
-			pw3.println("thread 5 end   time: " + CS5.getFinTime());
+			pw3.println("thread 1 end   time: " + CrapsGame1.getFinTime());
+			pw3.println("thread 2 end   time: " + CrapsGame2.getFinTime());
+			pw3.println("thread 3 end   time: " + CrapsGame3.getFinTime());
+			pw3.println("thread 4 end   time: " + CrapsGame4.getFinTime());
+			pw3.println("thread 5 end   time: " + CrapsGame5.getFinTime());
 			pw3.println("total games played in all threads " + total);
 			pw3.println();
 			pw3.println("*********END OF SIMULATION*********");
@@ -165,11 +165,11 @@ public class Lab4
 			pw4.println("thread 3 start time: " + t3StartTime);
 			pw4.println("thread 4 start time: " + t4StartTime);
 			pw4.println("thread 5 start time: " + t5StartTime);
-			pw4.println("thread 1 end   time: " + CS1.getFinTime());
-			pw4.println("thread 2 end   time: " + CS2.getFinTime());
-			pw4.println("thread 3 end   time: " + CS3.getFinTime());
-			pw4.println("thread 4 end   time: " + CS4.getFinTime());
-			pw4.println("thread 5 end   time: " + CS5.getFinTime());
+			pw4.println("thread 1 end   time: " + CrapsGame1.getFinTime());
+			pw4.println("thread 2 end   time: " + CrapsGame2.getFinTime());
+			pw4.println("thread 3 end   time: " + CrapsGame3.getFinTime());
+			pw4.println("thread 4 end   time: " + CrapsGame4.getFinTime());
+			pw4.println("thread 5 end   time: " + CrapsGame5.getFinTime());
 			pw4.println("total games played in all threads " + total);
 			pw4.println();
 			pw4.println("*********END OF SIMULATION*********");
@@ -181,11 +181,11 @@ public class Lab4
 			pw5.println("thread 3 start time: " + t3StartTime);
 			pw5.println("thread 4 start time: " + t4StartTime);
 			pw5.println("thread 5 start time: " + t5StartTime);
-			pw5.println("thread 1 end   time: " + CS1.getFinTime());
-			pw5.println("thread 2 end   time: " + CS2.getFinTime());
-			pw5.println("thread 3 end   time: " + CS3.getFinTime());
-			pw5.println("thread 4 end   time: " + CS4.getFinTime());
-			pw5.println("thread 5 end   time: " + CS5.getFinTime());
+			pw5.println("thread 1 end   time: " + CrapsGame1.getFinTime());
+			pw5.println("thread 2 end   time: " + CrapsGame2.getFinTime());
+			pw5.println("thread 3 end   time: " + CrapsGame3.getFinTime());
+			pw5.println("thread 4 end   time: " + CrapsGame4.getFinTime());
+			pw5.println("thread 5 end   time: " + CrapsGame5.getFinTime());
 			pw5.println("total games played in all threads " + total);
 			pw5.println();
 			pw5.println("*********END OF SIMULATION*********");
@@ -197,11 +197,11 @@ public class Lab4
 			pw6.println("thread 3 start time: " + t3StartTime);
 			pw6.println("thread 4 start time: " + t4StartTime);
 			pw6.println("thread 5 start time: " + t5StartTime);
-			pw6.println("thread 1 end   time: " + CS1.getFinTime());
-			pw6.println("thread 2 end   time: " + CS2.getFinTime());
-			pw6.println("thread 3 end   time: " + CS3.getFinTime());
-			pw6.println("thread 4 end   time: " + CS4.getFinTime());
-			pw6.println("thread 5 end   time: " + CS5.getFinTime());
+			pw6.println("thread 1 end   time: " + CrapsGame1.getFinTime());
+			pw6.println("thread 2 end   time: " + CrapsGame2.getFinTime());
+			pw6.println("thread 3 end   time: " + CrapsGame3.getFinTime());
+			pw6.println("thread 4 end   time: " + CrapsGame4.getFinTime());
+			pw6.println("thread 5 end   time: " + CrapsGame5.getFinTime());
 			pw6.println("total games played in all threads " + total);
 			pw6.println();
 			pw6.println("*********END*********");
@@ -228,11 +228,11 @@ public class Lab4
 	System.out.print("Replay? Enter 'y' or 'n': ");
 	play = s.nextLine();
 	play = CrapsSimulation.validateResponseV2(play, s);
-	CS1.reset();
-	CS2.reset();
-	CS3.reset();
-	CS4.reset();
-	CS5.reset();
+	CrapsGame1.reset();
+	CrapsGame2.reset();
+	CrapsGame3.reset();
+	CrapsGame4.reset();
+	CrapsGame5.reset();
 	}
 	
 }
