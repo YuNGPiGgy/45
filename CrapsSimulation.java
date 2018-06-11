@@ -8,16 +8,16 @@
  o	A class representing all the information for the Simulation. This includes:
 	o	A CrapsGame object
 	o	A CrapsMetricsMonitor object
-	o	The user’s name
-	o	The user’s balance
-	o	The user’s bet
+	o	The userî–¸ name
+	o	The userî–¸ balance
+	o	The userî–¸ bet
 	o	The current win streak
 	o	The current lose streak
 	
 o	Public methods that this class must implement are:
 	o	CrapsSimulation()
 		o	Constructor that initializes all fields to default values and 
-			constructs any objects used (i.e. Scanner, CrapsMetricsMonitor, …)
+			constructs any objects used (i.e. Scanner, CrapsMetricsMonitor, ï¿½)
 	o	void start()
 		o	Main loop of a single simulation run. This is where the user inputs 
 			their name, balance, and bet, runs the simulation, and 
@@ -41,8 +41,25 @@ public class CrapsSimulation
 	private int userBet;
 	private int currentWinStreak;
 	private int currentLoseStreak;
+<<<<<<< HEAD
 	private int totalGamesPlayed = 0;
 	private Thread t;
+=======
+	private String input;
+	private String threadName;
+	
+	public void start()
+	{
+		if(t==null)
+		 Thread t = new Thread (this, threadName);
+  		 long startTime = System.currentTimeMillis();
+  		 System.out.println("The current time is thread " + threadName + " starting at "+ startTime);
+  		 t.start();
+  		 long endTime = System.currentTimeMillis();
+  		 System.out.println("The current time is thread " + threadName + " finishing at "+ endTime);
+
+  	 	}
+>>>>>>> 3b640dcebee0c4c645721133bb8a9c13cbc248a4
 	
 	private Scanner input;
 	
@@ -62,10 +79,11 @@ public class CrapsSimulation
 	}
 	
 	//The Game Simulation that prompts the user for the name, budget, and bets
-	public void start()
+	public void start1()
 	{
 		boolean Playing = true;
 		
+<<<<<<< HEAD
 		while (Playing)
 		{
 			crapsMetricsMonitor.setMaxBalance(userBalance);
@@ -84,6 +102,10 @@ public class CrapsSimulation
 		
 				System.out.println(userName + " bets $" + userBet);
 				
+=======
+		while (true)
+		{	
+>>>>>>> 3b640dcebee0c4c645721133bb8a9c13cbc248a4
 				//Start Game
 				boolean winGame = crapsGame.playGame();
 				if (winGame)
@@ -131,4 +153,3 @@ public class CrapsSimulation
 			}
 		}
 	}
-}
