@@ -55,19 +55,19 @@ public class Lab4
 		}
 		
 		CrapsSimulation Game1 = new CrapsSimulation("CrapsGame1", "src/CrapsGame1.txt", userName, userBalance, userBet);
-		Thread t1 = new Thread (Game1, "CrapsGame1");
+		Thread t1 = new Thread ("CrapsGame1");
 
 		CrapsSimulation Game2 = new CrapsSimulation("CrapsGame2", "src/CrapsGame2.txt", userName, userBalance, userBet);
-		Thread t1 = new Thread (Game1, "CrapsGame2");
+		Thread t2 = new Thread ("CrapsGame2");
 		
-		CrapsSimulation Game3 = new CrapsSimulation("CrapsGame1", "src/CrapsGame3.txt", userName, userBalance, userBet);
-		Thread t1 = new Thread (Game1, "CrapsGame3");
+		CrapsSimulation Game3 = new CrapsSimulation("CrapsGame3", "src/CrapsGame3.txt", userName, userBalance, userBet);
+		Thread t3 = new Thread ("CrapsGame3");
 		
-		CrapsSimulation Game4 = new CrapsSimulation("CrapsGame1", "src/CrapsGame4.txt", userName, userBalance, userBet);
-		Thread t1 = new Thread (Game1, "CrapsGame4");
+		CrapsSimulation Game4 = new CrapsSimulation("CrapsGame4", "src/CrapsGame4.txt", userName, userBalance, userBet);
+		Thread t4 = new Thread ("CrapsGame4");
 		
-		CrapsSimulation Game5 = new CrapsSimulation("CrapsGame1", "src/CrapsGame5.txt", userName, userBalance, userBet);
-		Thread t1 = new Thread (Game1, "CrapsGame5");
+		CrapsSimulation Game5 = new CrapsSimulation("CrapsGame5", "src/CrapsGame5.txt", userName, userBalance, userBet);
+		Thread t5 = new Thread ("CrapsGame5");
 	}
 	long t1StartTime = System.currentTimeMillis();
 	t1.start();
@@ -237,4 +237,4 @@ public class Lab4
 	
 }
 
-}
+
