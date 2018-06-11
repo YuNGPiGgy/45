@@ -1,3 +1,9 @@
+/******45J lab***********
+//yungchc1 Yung-Chu Chuang 50926235
+//tzulingw Tzu-Ling Wang   77721457
+//
+//
+************************/
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
