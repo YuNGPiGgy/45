@@ -23,7 +23,13 @@ o	Public methods that this class must implement are:
 			their name, balance, and bet, runs the simulation, and 
 			continues to do so if the user wants to run it again.
  */
-
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class CrapsSimulation
 {
@@ -35,6 +41,10 @@ public class CrapsSimulation
 	private int userBet;
 	private int currentWinStreak;
 	private int currentLoseStreak;
+<<<<<<< HEAD
+	private int totalGamesPlayed = 0;
+	private Thread t;
+=======
 	private String input;
 	private String threadName;
 	
@@ -49,28 +59,53 @@ public class CrapsSimulation
   		 System.out.println("The current time is thread " + threadName + " finishing at "+ endTime);
 
   	 	}
+>>>>>>> 3b640dcebee0c4c645721133bb8a9c13cbc248a4
 	
+	private Scanner input;
 	
 	//Constructor
-	public CrapsSimulation(String tname, String fileName, String name, int balance, int bet)
+	public CrapsSimulation(String userName, int userBalance, int userBet, String file)
 	{
 		this.crapsMetricsMonitor = new CrapsMetricsMonitor();
 		this.crapsGame = new CrapsGame(crapsMetricsMonitor);
-		this.userName = name;
-		this.userBalance = balance;
-		this.userBet = bet;
+		this.userName = userName;
+		this.userBalance = userBalance;
+		this.userBet = userBet;
 		this.currentWinStreak = 0;
 		this.currentLoseStreak = 0;
+		this.input = new Scanner(System.in);
+		
 		start();
 	}
 	
 	//The Game Simulation that prompts the user for the name, budget, and bets
 	public void start1()
 	{
-		crapsMetricsMonitor.setMaxBalance(userBalance);
+		boolean Playing = true;
 		
+<<<<<<< HEAD
+		while (Playing)
+		{
+			crapsMetricsMonitor.setMaxBalance(userBalance);
+			
+			//If balance fall below original bet, use all the balance
+			while (userBalance > 0)
+			{
+				if (userBalance < bet)
+				{
+					userBet = userBalance;
+				}
+				else
+				{
+					userBet = bet;
+				}
+		
+				System.out.println(userName + " bets $" + userBet);
+				
+=======
 		while (true)
 		{	
+>>>>>>> 3b640dcebee0c4c645721133bb8a9c13cbc248a4
 				//Start Game
 				boolean winGame = crapsGame.playGame();
 				if (winGame)

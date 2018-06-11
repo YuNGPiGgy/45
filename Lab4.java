@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /******45J lab***********
 //yungchc1 Yung-Chu Chuang 50926235
 //----------------------------------
@@ -7,24 +9,18 @@
 
  o	Contains the main method. All it does is construct a CrapsSimulation object and calls.start() on it.
 */
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-
 import java.util.Scanner;
 
 public class Lab4
 {	
+	@SuppressWarnings("null")
 	public static void main(String[] args)
 	{
 		String userName;
 		int userBalance;
 		int userBet;
 		Scanner input = null;
-	
-		//User Information
+		
 		System.out.println("Welcome to SimCraps! Enter your user name: ");
 		userName = input.next();
 		System.out.println("Hello " + userName + "!");
@@ -38,7 +34,15 @@ public class Lab4
 			System.out.println("Invalid bet! Not Enough Balance (" + userBalance + ") Left :");
 			bet = input.nextInt();
 		}
+		userBet = bet;
 		
+<<<<<<< HEAD
+		CrapsSimulation Game1 = new CrapsSimulation(userName, userBalance, userBet, "Game1");
+		CrapsSimulation Game2 = new CrapsSimulation(userName, userBalance, userBet, "Game2");
+		CrapsSimulation Game3 = new CrapsSimulation(userName, userBalance, userBet, "Game3");
+		CrapsSimulation Game4 = new CrapsSimulation(userName, userBalance, userBet, "Game4");
+		CrapsSimulation Game5 = new CrapsSimulation(userName, userBalance, userBet, "Game5");
+=======
 		//If balance fall below original bet, use all the balance
 		while (userBalance > 0)
 		{
@@ -219,10 +223,12 @@ public class Lab4
 		}
 		
 		
+>>>>>>> 3b640dcebee0c4c645721133bb8a9c13cbc248a4
 			
-	} catch (InterruptedException e) {
-		e.printStackTrace();
 	}
+<<<<<<< HEAD
+}
+=======
 
 	
 	System.out.print("Replay? Enter 'y' or 'n': ");
@@ -238,3 +244,4 @@ public class Lab4
 }
 
 
+>>>>>>> 3b640dcebee0c4c645721133bb8a9c13cbc248a4
