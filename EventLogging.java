@@ -16,7 +16,7 @@ public class EventLogging{
 				PrintWriter pw = new PrintWriter(fileName);
 				for(int i = 0; i < 10; i++)
 				{
-					Thread.sleep(0);
+					Thread.sleep(1000);
 					pw.write("The current time is thread " + threadName + " printing at "+ System.currentTimeMillis() + "\n");
 					System.out.println("The current time is thread " + threadName + " printing at "+ System.currentTimeMillis());
 				}

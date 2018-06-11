@@ -58,7 +58,7 @@ public class CrapsSimulation implements Runnable
 		this.currentLoseStreak = 0;
 		this.input = new Scanner(System.in);
 		this.fileName = "src/"+threadName+".txt";
-		threadName = threadName;
+		//threadName = threadName;
 		try 
 		{
 			this.pw = new PrintWriter(this.fileName);
@@ -67,7 +67,7 @@ public class CrapsSimulation implements Runnable
 		{
 			e.printStackTrace();
 		}
-		this.pw.write("Simulation starts at " + System.currentTimeMillis()\n");
+		this.pw.write("Simulation starts at " + System.currentTimeMillis()+"\n");
 		this.pw.write("Hi " + this.userName + "!! \n");
 		this.pw.write("Balance: " + this.userBalance + "\n");
 		this.pw.write("Bet: " + this.userBet + "\n");
